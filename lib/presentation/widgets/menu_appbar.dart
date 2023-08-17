@@ -9,7 +9,7 @@ class MenuAppbar extends StatelessWidget implements PreferredSizeWidget {
         title: const Text(
           'Green Planet',
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 20, color:Colors.white, fontFamily: 'Pacifico'
             ),
         ),
         backgroundColor: Colors.green,

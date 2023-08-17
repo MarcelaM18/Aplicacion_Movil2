@@ -20,7 +20,7 @@ class NavegationDrawer extends StatelessWidget {
               child: Text(
                 'Green Planet',
                 style: TextStyle(
-                  fontSize: 45,
+                  fontSize: 45, color: Colors.white, fontFamily: 'Pacifico'
                 ),
               )),
           ListTile(
