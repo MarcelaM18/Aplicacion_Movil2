@@ -3,7 +3,7 @@ import 'package:navegacion/presentation/screens/home_page.dart';
 import 'package:flutter/services.dart';
 
 void main() {
-  runApp(const MyApp()); 
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

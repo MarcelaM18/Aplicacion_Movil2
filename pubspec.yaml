@@ -62,6 +62,11 @@ flutter:
     - assets/img/logoMovil.png
     - assets/img/item1_image.png
     - assets/img/fondo.jpg
+    - assets/img/fondo2.jpg
+    - assets/img/fondo1.jpg
+    - assets/img/fondo3.jpg
+    - assets/img/fondo4.jpg
+    
 
   #   - images/a_dot_ham.jpeg
 
