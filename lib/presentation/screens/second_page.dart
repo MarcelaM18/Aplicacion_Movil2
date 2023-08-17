@@ -31,7 +31,7 @@ class SecondPage extends StatelessWidget {
     return  Scaffold(
       appBar: MenuAppbar(),
       drawer: NavegationDrawer(),
-      backgroundColor: Colors.green[100],
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
      
       body: 
       
@@ -47,13 +47,40 @@ class SecondPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           if (index == 0)
+          Row(
+             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children:[
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Home()),
+                );
+              },
+              child: const Text('Ir a Home'),),
+               ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ThirdPage()),
+                );
+              },
+              child: const Text('Personas'),),
+            ],
+
+          ),
+            
+            if (index == 0)
           const  Padding(
-              
+           
               padding: const EdgeInsets.only(bottom: 10),
               child: Text(
                 'Eventos',
                 style: TextStyle(fontSize: 24,),
+                
               ),
+                 
+              
             ),
           Row(
             children: [
@@ -82,16 +109,23 @@ class SecondPage extends StatelessWidget {
                             : Colors.red,
                       ),
                     ),
+                     
+              
+           
                   ],
+
                 ),
               ),
             ],
           ),
         ],
       ),
+      
     );
   },
-)
+  
+
+),
 
 
 
