@@ -12,21 +12,40 @@ class ThirdPage extends StatefulWidget {
 }
 
 class _ThirdPageState extends State<ThirdPage> {
-  final List<Map<String, dynamic>> itemList = [
+  
+  final List<Map<String, dynamic>> itemListMedellin = [
     {
-      'title': 'Item 1',
+      'title': 'Medellín',
       'image': 'assets/img/item1_image.png',
-      'sublist': ['Subitem 1.1', 'Subitem 1.2', 'Subitem 1.3'],
+      'sublist': [
+        'Evento Medellín 1',
+        'Evento Medellín 2',
+        'Evento Medellín 3'
+      ],
     },
+  ];
+
+  final List<Map<String, dynamic>> itemListBogota = [
     {
-      'title': 'Item 2',
-      'image': 'assets/item2_image.png',
-      'sublist': ['Subitem 2.1', 'Subitem 2.2'],
+      'title': 'Bogotá',
+      'image': 'assets/img/item2_image.png',
+      'sublist': [
+        'Evento Bogotá 1', 
+        'Evento Bogotá 2', 
+        'Evento Bogotá 3'
+      ],
     },
+  ];
+
+  final List<Map<String, dynamic>> itemListCartagena = [
     {
-      'title': 'Item 3',
-      'image': 'assets/item3_image.png',
-      'sublist': ['Subitem 3.1', 'Subitem 3.2', 'Subitem 3.3', 'Subitem 3.4'],
+      'title': 'Cartagena',
+      'image': 'assets/img/item3_image.png',
+      'sublist': [
+        'Evento cartagena 1',
+        'Evento cartagena 2',
+        'Evento cartagena 3'
+      ],
     },
   ];
 
@@ -50,7 +69,7 @@ class _ThirdPageState extends State<ThirdPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height: 20,
+                  height: 5,
                 ),
                 Container(
                   width: 325,
@@ -58,105 +77,248 @@ class _ThirdPageState extends State<ThirdPage> {
                     color: Colors.black87,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Column(
-                    children: [
-                      const Text(
-                        'Eventos cerca de usted',
-                        style: TextStyle(
-                          fontSize: 29,
-                          color: Colors.white,
-                        ),
-                      ),
-                      RadioListTile(
-                        title: const Text(
-                          'Medellín',
-                          style: TextStyle(
-                            color: Colors.white,
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.fromLTRB(18, 20, 18, 0),
+                          decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                        ),
-                        value: 'Medellín',
-                        groupValue: selectedCity,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedCity = value as String;
-                          });
-                        },
-                      ),
-                      RadioListTile(
-                        title: const Text(
-                          'Bogotá',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                        value: 'Bogotá',
-                        groupValue: selectedCity,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedCity = value as String;
-                          });
-                        },
-                      ),
-                      RadioListTile(
-                        title: const Text(
-                          'Cartagena',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                        value: 'Cartagena',
-                        groupValue: selectedCity,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedCity = value as String;
-                          });
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  width: 325,
-                  height: 300,
-                  decoration: BoxDecoration(
-                    color: Colors.black87,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: selectedCity != null
-                      ? ListView.builder(
-                          itemCount: itemList.length,
-                          itemBuilder: (context, index) {
-                            final item = itemList[index];
-                            return ListTile(
-                              title: Text(
-                                item['title'],
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                ),
+                          child: const Center(
+                            child: Text(
+                              'Eventos cerca',
+                              style: TextStyle(
+                                fontSize: 28,
+                                color: Colors.white,
                               ),
-                              subtitle: Text(
-                                item['sublist'].join(', '),
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
-                            );
-                          },
-                        )
-                      : const Center(
-                          child: Text(
-                            'Seleccione una ciudad',
-                            style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.white,
                             ),
                           ),
                         ),
+                        Container(
+                          width: 290,
+                          margin: const EdgeInsets.fromLTRB(10, 15, 10, 20),
+                          decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Column(
+                            children: [
+                              RadioListTile(
+                                title: const Text(
+                                  'Medellín',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                value: 'Medellín',
+                                groupValue: selectedCity,
+                                onChanged: (value) {
+                                  setState(() {
+                                    selectedCity = value as String;
+                                  });
+                                },
+                              ),
+                              RadioListTile(
+                                title: const Text(
+                                  'Bogotá',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                value: 'Bogotá',
+                                groupValue: selectedCity,
+                                onChanged: (value) {
+                                  setState(() {
+                                    selectedCity = value as String;
+                                  });
+                                },
+                              ),
+                              RadioListTile(
+                                title: const Text(
+                                  'Cartagena',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                value: 'Cartagena',
+                                groupValue: selectedCity,
+                                onChanged: (value) {
+                                  setState(() {
+                                    selectedCity = value as String;
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(
+                  height: 15,
+                ),
+                Container(
+                  width: 325,
+                  height: 270,
+                  decoration: BoxDecoration(
+                    color: Colors.black87,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: selectedCity == 'Medellín'
+                      ? Container(
+                          width: 320,
+                          margin: const EdgeInsets.fromLTRB(7, 10, 1, 0),
+                          child: ListView.builder(
+                            itemCount: itemListMedellin.length,
+                            itemBuilder: (context, index) {
+                              final item = itemListMedellin[index];
+                              return ListTile(
+                                title: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.green,
+                                  ),
+                                  child: Align(
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      item['title'],
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 29,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                subtitle: Container(
+                                  height: 170,
+                                  margin:
+                                      const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                                  decoration: BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      item['sublist'].join('\n\n'),
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        )
+                      : selectedCity == 'Bogotá'
+                          ? Container(
+                              width: 320,
+                              margin: const EdgeInsets.fromLTRB(7, 10, 1, 0),
+                              child: ListView.builder(
+                                itemCount: itemListBogota.length,
+                                itemBuilder: (context, index) {
+                                  final item = itemListBogota[index];
+                                  return ListTile(
+                                    title: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: Colors.green,
+                                      ),
+                                      child: Align(
+                                        alignment: Alignment.center,
+                                        child: Text(
+                                          item['title'],
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 29,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    subtitle: Container(
+                                      height: 170,
+                                      margin: const EdgeInsets.fromLTRB(
+                                          0, 20, 0, 0),
+                                      decoration: BoxDecoration(
+                                        color: Colors.green,
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          item['sublist'].join('\n\n'),
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                            )
+                          : selectedCity == 'Cartagena'
+                              ? Container(
+                                  width: 320,
+                                  margin:
+                                      const EdgeInsets.fromLTRB(7, 10, 1, 0),
+                                  child: ListView.builder(
+                                    itemCount: itemListCartagena.length,
+                                    itemBuilder: (context, index) {
+                                      final item = itemListCartagena[index];
+                                      return ListTile(
+                                        title: Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            color: Colors.green,
+                                          ),
+                                          child: Align(
+                                            alignment: Alignment.center,
+                                            child: Text(
+                                              item['title'],
+                                              style: const TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 29,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        subtitle: Container(
+                                          height: 170,
+                                          margin: const EdgeInsets.fromLTRB(
+                                              0, 20, 0, 0),
+                                          decoration: BoxDecoration(
+                                            color: Colors.green,
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              item['sublist'].join('\n\n'),
+                                              style: const TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                )
+                              : const Center(
+                                  child: Text(
+                                    'Seleccione una ciudad',
+                                    style: TextStyle(
+                                      fontSize: 25,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                ),
+                const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -171,9 +333,6 @@ class _ThirdPageState extends State<ThirdPage> {
                       },
                       child: const Text('Second Page'),
                     ),
-                    const SizedBox(
-                      width: 20,
-                    ),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.push(
@@ -186,9 +345,6 @@ class _ThirdPageState extends State<ThirdPage> {
                       child: const Text('Home Page'),
                     ),
                   ],
-                ),
-                const SizedBox(
-                  height: 15,
                 ),
               ],
             ),
