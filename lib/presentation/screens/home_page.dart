@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:navegacion/presentation/screens/second_home_screen.dart';
-import 'package:navegacion/presentation/screens/third_home_screen.dart';
+import 'package:navegacion/presentation/screens/second_page.dart';
+import 'package:navegacion/presentation/screens/third_page.dart';
 import 'package:navegacion/presentation/widgets/menu_appbar.dart';
 import 'package:navegacion/presentation/widgets/menu_drawer.dart';
 
@@ -33,7 +33,7 @@ class Home extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const SecondHomeScreen() ,
+                            builder: (context) => const SecondPage() ,
                             ),
                           );
                       },
@@ -63,7 +63,7 @@ class Home extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const ThirdHomeScreen() ,
+                            builder: (context) => const ThirdPage() ,
                             ),
                           );
                       },
