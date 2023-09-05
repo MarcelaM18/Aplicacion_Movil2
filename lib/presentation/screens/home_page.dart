@@ -1,7 +1,11 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:navegacion/presentation/screens/second_page.dart';
+import 'package:navegacion/presentation/screens/second_home_screen.dart';
+import 'package:navegacion/presentation/screens/third_home_screen.dart';
 import 'package:navegacion/presentation/widgets/menu_appbar.dart';
 import 'package:navegacion/presentation/widgets/menu_drawer.dart';
+
+import '../../dominio/models/imagen_list.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -13,31 +17,82 @@ class Home extends StatelessWidget {
       appBar: const MenuAppbar(),
       body: Column(
         children: [
-          Container(
-            height: 200,
-            child: PageView(
-              children: [
-                Image.asset(
-                  'assets/img/fondo1.jpg',
-                  width: 400,
-                  height: 170,
-                  fit: BoxFit.cover,
-                ),
-                Image.asset(
-                  'assets/img/fondo3.jpg',
-                  width: 400,
-                  height: 170,
-                  fit: BoxFit.cover,
-                ),
-                Image.asset(
-                  'assets/img/fondo4.jpg',
-                  width: 400,
-                  height: 170,
-                  fit: BoxFit.cover,
-                ),
-              ],
+        const SizedBox(height: 30,),
+          Row(
+            
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SecondHomeScreen() ,
+                            ),
+                          );
+                      },
+                      icon: const Icon(
+                        Icons.event_available,
+                        size: 50,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      ),
+                    ),
+                  ),
+                  const Text('Eventos')
+                ],
+              ),
+              const SizedBox(
+              height: 100,
             ),
+            
+              Column(
+                children: [
+                  Container(
+                    
+                    decoration: BoxDecoration(
+                        color:  Colors.green,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ThirdHomeScreen() ,
+                            ),
+                          );
+                      },
+                      icon: const Icon(
+                        Icons.accessibility,
+                        size: 50,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      ),
+                    ),
+                  ),
+                  const Text('Personas')
+                ],
+              ),
+              const SizedBox(
+              height: 100,
+            ),
+            ],
           ),
+          const Text('Productos Destacados',
+          style: TextStyle(
+            color: Color.fromARGB(255, 178, 174, 62),fontSize: 18)),
+          CarouselSlider(
+          options: CarouselOptions(
+            autoPlay: true,
+            aspectRatio: 2.0,
+            enlargeCenterPage: true,
+          ),
+          items: imageSliders,
+        ),
           Expanded(
             child: CenterContent(),
           ),
@@ -69,18 +124,9 @@ class CenterContent extends StatelessWidget {
               padding: const EdgeInsets.all(50.0),
               child: const Text('Esta aplicación busca contribuir a la consecución de los Objetivos de Desarrollo Sostenible (ODS) establecidos por las Naciones Unidas, abordando desafíos como la pobreza, el cambio climático y la igualdad.', style: TextStyle(color: Colors.white)),
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SecondPage()),
-                );
-              },
-              child: const Text('Ir a la segunda Pagina'),
-            ),
           ],
-        ),
-      ],
-    );
+          ),
+        ],
+      );
   }
 }
