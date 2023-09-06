@@ -1,8 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:navegacion/presentation/screens/home_page.dart';
+import 'package:navegacion/datos/events_list.dart';
+import 'package:navegacion/dominio/models/event.dart';
 import 'package:navegacion/presentation/widgets/menu_appbar.dart';
 import 'package:navegacion/presentation/widgets/menu_drawer.dart';
-import 'package:navegacion/presentation/screens/second_page.dart';
 
 class ThirdPage extends StatefulWidget {
   const ThirdPage({Key? key}) : super(key: key);
@@ -12,343 +14,309 @@ class ThirdPage extends StatefulWidget {
 }
 
 class _ThirdPageState extends State<ThirdPage> {
-  
-  final List<Map<String, dynamic>> itemListMedellin = [
-    {
-      'title': 'Medellín',
-      'image': 'assets/img/item1_image.png',
-      'sublist': [
-        'Evento Medellín 1',
-        'Evento Medellín 2',
-        'Evento Medellín 3'
-      ],
-    },
+  final TextEditingController _searchController = TextEditingController();
+
+  List<Event> filterItems = [
+    Event(
+      name: 'Evento 1',
+      description: 'Descripción del evento 1',
+      location: 'Ubicación del evento 1',
+      date: '14-03-2000',
+      photo: 'imagen1.jpg',
+    ),
+    Event(
+      name: 'Evento 2',
+      description: 'Descripción del evento 2',
+      location: 'Ubicación del evento 2',
+      date: '14-03-2000',
+      photo: 'imagen2.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 4',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 5',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
   ];
 
-  final List<Map<String, dynamic>> itemListBogota = [
-    {
-      'title': 'Bogotá',
-      'image': 'assets/img/item2_image.png',
-      'sublist': [
-        'Evento Bogotá 1', 
-        'Evento Bogotá 2', 
-        'Evento Bogotá 3'
-      ],
-    },
-  ];
-
-  final List<Map<String, dynamic>> itemListCartagena = [
-    {
-      'title': 'Cartagena',
-      'image': 'assets/img/item3_image.png',
-      'sublist': [
-        'Evento cartagena 1',
-        'Evento cartagena 2',
-        'Evento cartagena 3'
-      ],
-    },
-  ];
-
-  String? selectedCity;
+  void searchItem(String text) {
+    setState(() {
+      filterItems = events
+          .where((i) => i.name.toLowerCase().contains(text.toLowerCase()))
+          .toList();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const MenuAppbar(),
-        drawer: const NavegationDrawer(),
-        backgroundColor: Colors.transparent,
-        body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/img/fondo.jpg'),
-              fit: BoxFit.cover,
-            ),
+      appBar: const MenuAppbar(),
+      drawer: const NavegationDrawer(),
+      backgroundColor: Colors.transparent,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/img/fondo.jpg'),
+            fit: BoxFit.cover,
           ),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(
-                  height: 5,
-                ),
-                Container(
-                  width: 325,
-                  decoration: BoxDecoration(
-                    color: Colors.black87,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Container(
-                    child: Column(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.fromLTRB(18, 20, 18, 0),
-                          decoration: BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              'Eventos cerca',
-                              style: TextStyle(
-                                fontSize: 28,
-                                color: Colors.white,
-                              ),
+        ),
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 5,
+              ),
+              Container(
+                child: Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(18, 20, 18, 0),
+                      decoration: const BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                        ),
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                          child: TextField(
+                            onChanged: searchItem,
+                            controller: _searchController,
+                            decoration: const InputDecoration(
+                              labelText: 'Buscar por ciudad',
+                              suffixIcon: Icon(Icons.search),
                             ),
                           ),
                         ),
-                        Container(
-                          width: 290,
-                          margin: const EdgeInsets.fromLTRB(10, 15, 10, 20),
-                          decoration: BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Column(
-                            children: [
-                              RadioListTile(
-                                title: const Text(
-                                  'Medellín',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                value: 'Medellín',
-                                groupValue: selectedCity,
-                                onChanged: (value) {
-                                  setState(() {
-                                    selectedCity = value as String;
-                                  });
-                                },
-                              ),
-                              RadioListTile(
-                                title: const Text(
-                                  'Bogotá',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                value: 'Bogotá',
-                                groupValue: selectedCity,
-                                onChanged: (value) {
-                                  setState(() {
-                                    selectedCity = value as String;
-                                  });
-                                },
-                              ),
-                              RadioListTile(
-                                title: const Text(
-                                  'Cartagena',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                value: 'Cartagena',
-                                groupValue: selectedCity,
-                                onChanged: (value) {
-                                  setState(() {
-                                    selectedCity = value as String;
-                                  });
-                                },
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                Container(
-                  width: 325,
-                  height: 270,
-                  decoration: BoxDecoration(
-                    color: Colors.black87,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: selectedCity == 'Medellín'
-                      ? Container(
-                          width: 320,
-                          margin: const EdgeInsets.fromLTRB(7, 10, 1, 0),
-                          child: ListView.builder(
-                            itemCount: itemListMedellin.length,
-                            itemBuilder: (context, index) {
-                              final item = itemListMedellin[index];
-                              return ListTile(
-                                title: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Colors.green,
-                                  ),
-                                  child: Align(
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      item['title'],
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 29,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                subtitle: Container(
-                                  height: 170,
-                                  margin:
-                                      const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                                  decoration: BoxDecoration(
-                                    color: Colors.green,
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      item['sublist'].join('\n\n'),
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                        )
-                      : selectedCity == 'Bogotá'
-                          ? Container(
-                              width: 320,
-                              margin: const EdgeInsets.fromLTRB(7, 10, 1, 0),
-                              child: ListView.builder(
-                                itemCount: itemListBogota.length,
-                                itemBuilder: (context, index) {
-                                  final item = itemListBogota[index];
-                                  return ListTile(
-                                    title: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        color: Colors.green,
-                                      ),
-                                      child: Align(
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          item['title'],
-                                          style: const TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 29,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    subtitle: Container(
-                                      height: 170,
-                                      margin: const EdgeInsets.fromLTRB(
-                                          0, 20, 0, 0),
-                                      decoration: BoxDecoration(
-                                        color: Colors.green,
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          item['sublist'].join('\n\n'),
-                                          style: const TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                },
-                              ),
-                            )
-                          : selectedCity == 'Cartagena'
-                              ? Container(
-                                  width: 320,
-                                  margin:
-                                      const EdgeInsets.fromLTRB(7, 10, 1, 0),
-                                  child: ListView.builder(
-                                    itemCount: itemListCartagena.length,
-                                    itemBuilder: (context, index) {
-                                      final item = itemListCartagena[index];
-                                      return ListTile(
-                                        title: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            color: Colors.green,
-                                          ),
-                                          child: Align(
-                                            alignment: Alignment.center,
-                                            child: Text(
-                                              item['title'],
-                                              style: const TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 29,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        subtitle: Container(
-                                          height: 170,
-                                          margin: const EdgeInsets.fromLTRB(
-                                              0, 20, 0, 0),
-                                          decoration: BoxDecoration(
-                                            color: Colors.green,
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                          ),
-                                          child: Center(
-                                            child: Text(
-                                              item['sublist'].join('\n\n'),
-                                              style: const TextStyle(
-                                                color: Colors.white,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                )
-                              : const Center(
-                                  child: Text(
-                                    'Seleccione una ciudad',
-                                    style: TextStyle(
-                                      fontSize: 25,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                ),
-                const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const SecondPage(),
-                          ),
-                        );
-                      },
-                      child: const Text('Second Page'),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Home(),
-                          ),
-                        );
-                      },
-                      child: const Text('Home Page'),
+                    Container(
+                      width: 290,
+                      margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                      decoration: const BoxDecoration(
+                        color: Colors.green,
+                      ),
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+              Container(
+                  constraints: BoxConstraints(
+                    maxWidth: 323,
+                    maxHeight: 520 - MediaQuery.of(context).viewInsets.bottom,
+                  ),
+                  width: 323,
+                  decoration: const BoxDecoration(
+                    color: Color.fromRGBO(246, 251, 244, 1),
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                    ),
+                  ),
+                  child: GestureDetector(
+                    child: ListView.builder(
+                      itemCount: filterItems.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Column(
+                          children: [
+                            ListTile(
+                              title: Text(filterItems[index].name),
+                              subtitle: Text(filterItems[index].date),
+                              leading: Container(
+                                width: 50,
+                                height: 50,
+                                decoration: const BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)),
+                                  color: Colors.black,
+                                ),
+                                // child: Image.file(
+                                //     File(filterItems[index].photo),
+                                //     fit: BoxFit.cover,
+                                //     scale: 1,
+                                //   ),
+                              ),
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            10, 0, 0, 0),
+                                        child: Text(filterItems[index].name),
+                                      ),
+                                      content: Container(
+                                        height: 310,
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              width: 300,
+                                              height: 150,
+                                              decoration: const BoxDecoration(
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(10)),
+                                                color: Colors.black,
+                                              ),
+                                              // child: Image.file(
+                                              //     File(filterItems[index].photo),
+                                              //     fit: BoxFit.cover,
+                                              //     scale: 1,
+                                              //   ),
+                                            ),
+                                            const SizedBox(height: 20,),
+                                            Container(
+                                              height: 140,
+                                              decoration: const BoxDecoration(
+                                                color: Colors.green,
+                                                borderRadius: BorderRadius.all(Radius.circular(10))
+                                              ),
+                                              child: Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Column(
+                                                  children: [
+                                                    Container(
+                                                      width: 300,
+                                                      child: Text(
+                                                        'Descripción: ${filterItems[index].description}')
+                                                    ),
+                                                    const SizedBox(height: 20,),
+                                                    Container(
+                                                      width: 300,
+                                                      child: Text(
+                                                        'Lugar: ${filterItems[index].location}')
+                                                    ),
+                                                    const SizedBox(height: 20,),
+                                                    Container(
+                                                      width: 300,
+                                                      child: Text(
+                                                        'Fecha: ${filterItems[index].date}')
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: const Text("Cerrar"),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                            ),
+                            Container(
+                              width: 290,
+                              height: 0.1,
+                              decoration: const BoxDecoration(
+                                color: Colors.black,
+                              ),
+                            )
+                          ],
+                        );
+                      },
+                    ),
+                  ))
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
