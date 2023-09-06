@@ -31,10 +31,11 @@ class _LoginPageState extends State<LoginPage> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Inicio de sesión exitoso'),
+          backgroundColor: Colors.green,
         ),
       );
 
-      Future.delayed(const Duration(seconds: 2), () {
+      Future.delayed(const Duration(seconds: 1), () {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const Home()),
@@ -44,6 +45,7 @@ class _LoginPageState extends State<LoginPage> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Usuario o Contraseña incorrectas'),
+          backgroundColor: Colors.red,
         ),
       );
     }
@@ -53,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MenuAppbar(centerTitle: true, showMenu: false),
-      body: SingleChildScrollView( // Agregar SingleChildScrollView aquí
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -87,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                   );
                 },
                 child: const Text(
-                  'Inicia sesión o regístrate',
+                  'No tienes Cuenta? Regístrate',
                   style: TextStyle(
                     color: Colors.blue,
                     decoration: TextDecoration.underline,
@@ -110,8 +112,10 @@ class _LoginPageState extends State<LoginPage> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           content: Text('Por favor, complete todos los campos.'),
+                          backgroundColor: Colors.red,
+
                         ),
-                      );
+                    );
                     }
                   },
                   style: ElevatedButton.styleFrom(
