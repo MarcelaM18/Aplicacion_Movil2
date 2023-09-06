@@ -44,7 +44,9 @@ class MenuAppbar extends StatelessWidget implements PreferredSizeWidget {
                               // Cerrar el diálogo
                               Navigator.of(context).pop();
                             },
-                            child: const Text('No'),
+                            child: const Text('No', style: TextStyle(
+                            color: Colors.red),
+                          ),
                           ),
                         ],
                       );
