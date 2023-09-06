@@ -19,7 +19,6 @@ class Home extends StatelessWidget {
         children: [
         const SizedBox(height: 30,),
           Row(
-            
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Column(

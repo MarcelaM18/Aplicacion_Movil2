@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:navegacion/datos/events_list.dart';
 import 'package:navegacion/dominio/models/event.dart';
@@ -16,22 +18,109 @@ class _ThirdPageState extends State<ThirdPage> {
 
   List<Event> filterItems = [
     Event(
-      name: "Evento 1",
-      description: "Descripción del evento 1",
-      location: "Ubicación del evento 1",
-      photo: "imagen1.jpg",
+      name: 'Evento 1',
+      description: 'Descripción del evento 1',
+      location: 'Ubicación del evento 1',
+      date: '14-03-2000',
+      photo: 'imagen1.jpg',
     ),
     Event(
-      name: "Evento 2",
-      description: "Descripción del evento 2",
-      location: "Ubicación del evento 2",
-      photo: "imagen2.jpg",
+      name: 'Evento 2',
+      description: 'Descripción del evento 2',
+      location: 'Ubicación del evento 2',
+      date: '14-03-2000',
+      photo: 'imagen2.jpg',
     ),
     Event(
-      name: "Evento 3",
-      description: "Descripción del evento 3",
-      location: "Ubicación del evento 3",
-      photo: "imagen3.jpg",
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 4',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 5',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
     ),
   ];
 
@@ -71,23 +160,21 @@ class _ThirdPageState extends State<ThirdPage> {
                       decoration: const BoxDecoration(
                         color: Colors.green,
                         borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            topRight: Radius.circular(10)),
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                        ),
                       ),
                       child: Center(
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: TextField(
-                                onChanged: searchItem,
-                                controller: _searchController,
-                                decoration: const InputDecoration(
-                                  labelText: 'Buscar por ciudad',
-                                  prefixIcon: Icon(Icons.search),
-                                ),
-                              ),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                          child: TextField(
+                            onChanged: searchItem,
+                            controller: _searchController,
+                            decoration: const InputDecoration(
+                              labelText: 'Buscar por ciudad',
+                              suffixIcon: Icon(Icons.search),
                             ),
-                          ],
+                          ),
                         ),
                       ),
                     ),
@@ -97,35 +184,135 @@ class _ThirdPageState extends State<ThirdPage> {
                       decoration: const BoxDecoration(
                         color: Colors.green,
                       ),
-                      child: Column(),
                     ),
                   ],
                 ),
               ),
               Container(
-                width: 323,
-                decoration: const BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(10),
-                    bottomRight: Radius.circular(10),
+                  constraints: BoxConstraints(
+                    maxWidth: 323,
+                    maxHeight: 520 - MediaQuery.of(context).viewInsets.bottom,
                   ),
-                ),
-                child: ListView.builder(
-                  itemCount: filterItems.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return ListTile(
-                      title: Text(filterItems[index].name),
-                      subtitle: Text(filterItems[index].location),
-                      leading: Container(
-                        width: 50,
-                        height: 50,
-                        color: Colors.blue,
-                      ),
-                    );
-                  },
-                ),
-              )
+                  width: 323,
+                  decoration: const BoxDecoration(
+                    color: Color.fromRGBO(246, 251, 244, 1),
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                    ),
+                  ),
+                  child: GestureDetector(
+                    child: ListView.builder(
+                      itemCount: filterItems.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Column(
+                          children: [
+                            ListTile(
+                              title: Text(filterItems[index].name),
+                              subtitle: Text(filterItems[index].date),
+                              leading: Container(
+                                width: 50,
+                                height: 50,
+                                decoration: const BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)),
+                                  color: Colors.black,
+                                ),
+                                // child: Image.file(
+                                //     File(filterItems[index].photo),
+                                //     fit: BoxFit.cover,
+                                //     scale: 1,
+                                //   ),
+                              ),
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            10, 0, 0, 0),
+                                        child: Text(filterItems[index].name),
+                                      ),
+                                      content: Container(
+                                        height: 310,
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              width: 300,
+                                              height: 150,
+                                              decoration: const BoxDecoration(
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(10)),
+                                                color: Colors.black,
+                                              ),
+                                              // child: Image.file(
+                                              //     File(filterItems[index].photo),
+                                              //     fit: BoxFit.cover,
+                                              //     scale: 1,
+                                              //   ),
+                                            ),
+                                            const SizedBox(height: 20,),
+                                            Container(
+                                              height: 140,
+                                              decoration: const BoxDecoration(
+                                                color: Colors.green,
+                                                borderRadius: BorderRadius.all(Radius.circular(10))
+                                              ),
+                                              child: Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Column(
+                                                  children: [
+                                                    Container(
+                                                      width: 300,
+                                                      child: Text(
+                                                        'Descripción: ${filterItems[index].description}')
+                                                    ),
+                                                    const SizedBox(height: 20,),
+                                                    Container(
+                                                      width: 300,
+                                                      child: Text(
+                                                        'Lugar: ${filterItems[index].location}')
+                                                    ),
+                                                    const SizedBox(height: 20,),
+                                                    Container(
+                                                      width: 300,
+                                                      child: Text(
+                                                        'Fecha: ${filterItems[index].date}')
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: const Text("Cerrar"),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                            ),
+                            Container(
+                              width: 290,
+                              height: 0.1,
+                              decoration: const BoxDecoration(
+                                color: Colors.black,
+                              ),
+                            )
+                          ],
+                        );
+                      },
+                    ),
+                  ))
             ],
           ),
         ),
