@@ -13,120 +13,122 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavegationDrawer(),
+      drawer: const NavegationDrawer(),
       appBar: const MenuAppbar(),
-      body: Column(
+      body: Stack(
         children: [
-        const SizedBox(height: 30,),
-          Row(
-            
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Column(
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                const SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const SecondHomeScreen(),
+                                ),
+                              );
+                            },
+                            icon: const Icon(
+                              Icons.event_available,
+                              size: 50,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                          ),
+                        ),
+                        const Text('Eventos')
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 100,
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const ThirdHomeScreen(),
+                                ),
+                              );
+                            },
+                            icon: const Icon(
+                              Icons.accessibility,
+                              size: 50,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                          ),
+                        ),
+                        const Text('Personas')
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 100,
+                    ),
+                  ],
+                ),
+                const Text(
+                  'Productos Destacados',
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 178, 174, 62),
+                    fontSize: 18,
+                  ),
+                ),
+                CarouselSlider(
+                  options: CarouselOptions(
+                    autoPlay: true,
+                    aspectRatio: 2.0,
+                    enlargeCenterPage: true,
+                  ),
+                  items: imageSliders,
+                ),
+              ],
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: MediaQuery.of(context).size.height * 0.4, // Ajusta la altura como desees
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/img/fondo2.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const SecondHomeScreen() ,
-                            ),
-                          );
-                      },
-                      icon: const Icon(
-                        Icons.event_available,
-                        size: 50,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                      ),
+                    color: Colors.black.withOpacity(0.6),
+                    padding: const EdgeInsets.all(50.0),
+                    child: const Text(
+                      'Esta aplicación busca contribuir a la consecución de los Objetivos de Desarrollo Sostenible (ODS) establecidos por las Naciones Unidas, abordando desafíos como la pobreza, el cambio climático y la igualdad.',
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
-                  const Text('Eventos')
                 ],
               ),
-              const SizedBox(
-              height: 100,
             ),
-            
-              Column(
-                children: [
-                  Container(
-                    
-                    decoration: BoxDecoration(
-                        color:  Colors.green,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ThirdHomeScreen() ,
-                            ),
-                          );
-                      },
-                      icon: const Icon(
-                        Icons.accessibility,
-                        size: 50,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                      ),
-                    ),
-                  ),
-                  const Text('Personas')
-                ],
-              ),
-              const SizedBox(
-              height: 100,
-            ),
-            ],
-          ),
-          const Text('Productos Destacados',
-          style: TextStyle(
-            color: Color.fromARGB(255, 178, 174, 62),fontSize: 18)),
-          CarouselSlider(
-          options: CarouselOptions(
-            autoPlay: true,
-            aspectRatio: 2.0,
-            enlargeCenterPage: true,
-          ),
-          items: imageSliders,
-        ),
-          Expanded(
-            child: CenterContent(),
           ),
         ],
       ),
     );
-  }
-}
-
-class CenterContent extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/img/fondo2.jpg'),
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Container(
-              color: Colors.black.withOpacity(0.6),
-              padding: const EdgeInsets.all(50.0),
-              child: const Text('Esta aplicación busca contribuir a la consecución de los Objetivos de Desarrollo Sostenible (ODS) establecidos por las Naciones Unidas, abordando desafíos como la pobreza, el cambio climático y la igualdad.', style: TextStyle(color: Colors.white)),
-            ),
-          ],
-          ),
-        ],
-      );
   }
 }

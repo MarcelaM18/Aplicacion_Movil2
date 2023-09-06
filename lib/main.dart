@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:navegacion/presentation/screens/home_page.dart';
-import 'package:flutter/services.dart';
+import 'package:navegacion/presentation/screens/login_page.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  const Home(),
+      home: const LoginPage(),
       theme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: const Color.fromARGB(255, 59, 152, 62)
-    )
-    ,
+        colorSchemeSeed: const Color.fromARGB(255, 59, 152, 62),
+      ),
     );
   }
 }

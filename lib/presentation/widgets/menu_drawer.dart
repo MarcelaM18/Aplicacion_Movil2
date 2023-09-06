@@ -1,4 +1,3 @@
-
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:navegacion/presentation/screens/second_page.dart';
@@ -35,14 +34,14 @@ class NavegationDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.event),
-            title: Text('Eventos'),
+            leading: const Icon(Icons.event),
+            title: const Text('Eventos'),
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage()),);
             },),
             ListTile(
-            leading: Icon(Icons.person),
-            title: Text('Personas'),
+            leading: const Icon(Icons.person),
+            title: const Text('Personas'),
             onTap: () {
         
               Navigator.push(context, MaterialPageRoute(builder: (context) => ThirdPage()),
