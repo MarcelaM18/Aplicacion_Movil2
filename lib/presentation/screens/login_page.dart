@@ -16,10 +16,12 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  var username = '';
+  var password = '';
 
   void _login(BuildContext context) {
-    String username = _usernameController.text;
-    String password = _passwordController.text;
+    username = _usernameController.text;
+    password = _passwordController.text;
 
     bool isAuthenticated = usuarios.any((usuario) =>
         usuario.nombreUsuario == username &&
@@ -75,6 +77,10 @@ class _LoginPageState extends State<LoginPage> {
               ),
               GestureDetector(
                 onTap: () {
+                  setState(() {
+                    username = '';
+                    password = '';
+                  });
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const UsuarioRegistrationScreen()),
@@ -96,6 +102,10 @@ class _LoginPageState extends State<LoginPage> {
 
                     if (username.isNotEmpty && password.isNotEmpty) {
                       _login(context);
+                      setState(() {
+                        _usernameController.clear();
+                        _passwordController.clear();
+                      });
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
