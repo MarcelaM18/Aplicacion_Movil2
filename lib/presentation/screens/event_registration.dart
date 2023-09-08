@@ -116,7 +116,6 @@ class _EventoRegistroState extends State<EventoRegistro> {
                   ),
                 ],
               ),
-<<<<<<< HEAD
 if(photo.isEmpty)
 CircleAvatar(
   backgroundColor: Color.fromARGB(207, 247, 237, 237),
@@ -129,31 +128,6 @@ CircleAvatar(
       //FORMULARIO
         SingleChildScrollView(
           padding: const EdgeInsets.all(20.0),           
-=======
-
-if(photo.isEmpty)
-   CircleAvatar(
-  radius: 70.0, // Define el radio para establecer el tamaño
-  backgroundColor: Color.fromARGB(207, 247, 237, 237),
-  child: Icon(Icons.photo_album,
-  size: 30,), // Utiliza una función para construir el contenido del Avatar
-),
-if(photo.isNotEmpty)
-CircleAvatar(
-  radius: 70.0, // Define el radio para establecer el tamaño
-  backgroundImage: FileImage(File(photo)), // Utiliza una función para construir el contenido del Avatar
-),
-
-
- 
-
-                
-
-
-          //FORMULARIO
-        Padding(
-          padding: const EdgeInsets.all(16.0),           
->>>>>>> 5eb57cc6b13823d5d0bcd50176f20e38d07ed304
                   child: Form(
                     key: _formKey,
                     child: ListView(

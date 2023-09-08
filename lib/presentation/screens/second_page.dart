@@ -200,11 +200,7 @@ class _HomeEventosState extends State<HomeEventos> {
               Container(
                   constraints: BoxConstraints(
                     maxWidth: 317,
-<<<<<<< HEAD
                     maxHeight: 323 ,
-=======
-                    maxHeight: 323,
->>>>>>> 5eb57cc6b13823d5d0bcd50176f20e38d07ed304
                   ),
                   width: 317,
                   decoration: const BoxDecoration(
