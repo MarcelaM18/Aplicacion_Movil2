@@ -16,10 +16,12 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  var username = '';
+  var password = '';
 
   void _login(BuildContext context) {
-    String username = _usernameController.text;
-    String password = _passwordController.text;
+    username = _usernameController.text;
+    password = _passwordController.text;
 
     bool isAuthenticated = usuarios.any((usuario) =>
         usuario.nombreUsuario == username &&
@@ -29,10 +31,11 @@ class _LoginPageState extends State<LoginPage> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Inicio de sesión exitoso'),
+          backgroundColor: Colors.green,
         ),
       );
 
-      Future.delayed(const Duration(seconds: 2), () {
+      Future.delayed(const Duration(seconds: 1), () {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const Home()),
@@ -42,6 +45,7 @@ class _LoginPageState extends State<LoginPage> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Usuario o Contraseña incorrectas'),
+          backgroundColor: Colors.red,
         ),
       );
     }
@@ -51,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MenuAppbar(centerTitle: true, showMenu: false),
-      body: SingleChildScrollView( // Agregar SingleChildScrollView aquí
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -75,13 +79,17 @@ class _LoginPageState extends State<LoginPage> {
               ),
               GestureDetector(
                 onTap: () {
+                  setState(() {
+                    username = '';
+                    password = '';
+                  });
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const UsuarioRegistrationScreen()),
                   );
                 },
                 child: const Text(
-                  'Inicia sesión o regístrate',
+                  'No tienes Cuenta? Regístrate',
                   style: TextStyle(
                     color: Colors.blue,
                     decoration: TextDecoration.underline,
@@ -96,12 +104,18 @@ class _LoginPageState extends State<LoginPage> {
 
                     if (username.isNotEmpty && password.isNotEmpty) {
                       _login(context);
+                      setState(() {
+                        _usernameController.clear();
+                        _passwordController.clear();
+                      });
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           content: Text('Por favor, complete todos los campos.'),
+                          backgroundColor: Colors.red,
+
                         ),
-                      );
+                    );
                     }
                   },
                   style: ElevatedButton.styleFrom(

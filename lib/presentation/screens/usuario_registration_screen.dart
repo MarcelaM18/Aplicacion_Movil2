@@ -33,10 +33,11 @@ class _UsuarioRegistrationScreenState extends State<UsuarioRegistrationScreen> {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text('Registro exitoso'),
+        backgroundColor: Colors.green,
       ),
     );
 
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 1), () {
       Navigator.pop(context);
     });
   }
@@ -81,6 +82,7 @@ class _UsuarioRegistrationScreenState extends State<UsuarioRegistrationScreen> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           content: Text('Por favor, complete todos los campos.'),
+                          backgroundColor: Colors.red,
                         ),
                       );
                     }
