@@ -66,9 +66,9 @@ class _EventoRegistroState extends State<EventoRegistro> {
           // Background Image
           Positioned.fill(
             child: Image.asset(
-              'assets/img/listaapp.jpg',
+              'assets/img/sostenible.jpg',
               fit: BoxFit.cover,
-              color: Color.fromARGB(66, 128, 125, 125),
+              color: Color.fromARGB(6, 128, 125, 125),
               colorBlendMode: BlendMode.modulate,
             ),
           ),
@@ -104,8 +104,8 @@ class _EventoRegistroState extends State<EventoRegistro> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Color.fromARGB(230, 255, 255, 255),
-                            fontSize: 32,
-                            fontFamily: 'Pacifico',
+                            fontSize: 25,
+                            fontFamily: 'Inconsolata',
                             fontWeight: FontWeight.w400,
                             height: 0.62,
                             letterSpacing: 0.10,
@@ -116,38 +116,27 @@ class _EventoRegistroState extends State<EventoRegistro> {
                   ),
                 ],
               ),
-
 if(photo.isEmpty)
-  CircleAvatar(
-  radius: 70.0, // Define el radio para establecer el tamaño
+CircleAvatar(
   backgroundColor: Color.fromARGB(207, 247, 237, 237),
-  child: Icon(Icons.photo_album,
-  size: 30,), // Utiliza una función para construir el contenido del Avatar
+  child: Icon(Icons.photo,
+  size: 30),
 ),
 if(photo.isNotEmpty)
 CircleAvatar(
-  radius: 70.0, // Define el radio para establecer el tamaño
-  backgroundImage: FileImage(File(photo)), // Utiliza una función para construir el contenido del Avatar
-),
-
-
-
-
-                
-
-
-          //FORMULARIO
-        Padding(
-          padding: const EdgeInsets.all(16.0),
+  backgroundImage: FileImage(File(photo)),),
+      //FORMULARIO
+        SingleChildScrollView(
+          padding: const EdgeInsets.all(20.0),
                   child: Form(
                     key: _formKey,
                     child: ListView(
                       shrinkWrap: true,
             children: [
-SizedBox(height:8.0),               
+SizedBox(height:8.0),
 Container(
   width: 275,
-  height: 55,
+  height: 60,
   decoration: BoxDecoration(
     color: Colors.white,
     borderRadius: BorderRadius.circular(6),
@@ -185,7 +174,7 @@ Container(
 SizedBox(height: 8),
 Container(
   width: 275,
-  height: 55, 
+  height: 60, 
   decoration: BoxDecoration(
     color: Colors.white,
     borderRadius: BorderRadius.circular(8), 
@@ -222,7 +211,7 @@ Container(
  SizedBox(height: 8),
 Container(
   width: 275,
-  height: 55, 
+  height: 60, 
   decoration: BoxDecoration(
     color: Colors.white,
     borderRadius: BorderRadius.circular(8), 
@@ -259,7 +248,7 @@ Container(
 SizedBox(height: 8),
 Container(
   width: 275,
-  height: 55, 
+  height: 60, 
   decoration: BoxDecoration(
     color: Colors.white,
     borderRadius: BorderRadius.circular(8), 
@@ -300,7 +289,7 @@ Container(
           ),
         ),),
           
-          SizedBox(height:6.0),       
+          SizedBox(height:3.0),       
                
                 Padding(
                   padding: const EdgeInsets.all(20.0),
@@ -318,7 +307,13 @@ Container(
                       
                       );
                     }
+                     
                         },
+                         style: ElevatedButton.styleFrom(
+                    // ignore: deprecated_member_use
+                    primary: Colors.green,
+                    // ignore: deprecated_member_use
+                    onPrimary: Colors.white,),
                         child: const Text('Registrar'),
                       ),
                 ),
