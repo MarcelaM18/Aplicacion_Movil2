@@ -36,7 +36,7 @@ class Home extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const SecondPage(),
+                                  builder: (context) => const HomeEventos(),
                                 ),
                               );
                             },

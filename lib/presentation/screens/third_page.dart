@@ -126,8 +126,114 @@ class _ThirdPageState extends State<ThirdPage> {
 
   void searchItem(String text) {
     setState(() {
-      filterItems = events
-          .where((i) => i.name.toLowerCase().contains(text.toLowerCase()))
+      filterItems = [
+        Event(
+          name: 'Evento 1',
+          description: 'Descripción del evento 1',
+          location: 'Medellín',
+          date: '14-03-2000',
+          photo: 'imagen1.jpg',
+        ),
+        Event(
+          name: 'Evento 2',
+          description: 'Descripción del evento 2',
+          location: 'Medellín',
+          date: '14-03-2000',
+          photo: 'imagen2.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Medellín',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 4',
+          description: 'Descripción del evento 3',
+          location: 'Medellín',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 5',
+          description: 'Descripción del evento 3',
+          location: 'Medellín',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Bogotá',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Bogotá',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Bogotá',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Bogotá',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Bogotá',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Bogotá',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Cartagena',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Cartagena',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Cartagena',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Cartagena',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+      ]
+          .where((i) => i.location.toLowerCase().contains(text.toLowerCase()))
           .toList();
     });
   }
@@ -237,7 +343,8 @@ class _ThirdPageState extends State<ThirdPage> {
                                       content: Container(
                                         height: 310,
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
                                           children: [
                                             Container(
                                               width: 300,
@@ -253,33 +360,110 @@ class _ThirdPageState extends State<ThirdPage> {
                                               //     scale: 1,
                                               //   ),
                                             ),
-                                            const SizedBox(height: 20,),
+                                            const SizedBox(
+                                              height: 20,
+                                            ),
                                             Container(
                                               height: 140,
                                               decoration: const BoxDecoration(
-                                                color: Colors.green,
-                                                borderRadius: BorderRadius.all(Radius.circular(10))
-                                              ),
+                                                  color: Colors.green,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(10))),
                                               child: Padding(
-                                                padding: const EdgeInsets.all(8.0),
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
                                                 child: Column(
                                                   children: [
                                                     Container(
                                                       width: 300,
-                                                      child: Text(
-                                                        'Descripción: ${filterItems[index].description}')
+                                                      child: RichText(
+                                                        text: TextSpan(
+                                                          children: [
+                                                            const TextSpan(
+                                                              text: 'Descripción: ',
+                                                              style: TextStyle(
+                                                                color: Colors
+                                                                    .white, // Color para "Fecha"
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold, // Otras propiedades de estilo según sea necesario
+                                                              ),
+                                                            ),
+                                                            TextSpan(
+                                                              text:
+                                                                  filterItems[index].description,
+                                                              style: const TextStyle(
+                                                                color: Colors
+                                                                    .black, // Color para la fecha
+                                                                // Otras propiedades de estilo según sea necesario
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
                                                     ),
-                                                    const SizedBox(height: 20,),
+                                                    const SizedBox(
+                                                      height: 20,
+                                                    ),
                                                     Container(
                                                       width: 300,
-                                                      child: Text(
-                                                        'Lugar: ${filterItems[index].location}')
+                                                      child: RichText(
+                                                        text: TextSpan(
+                                                          children: [
+                                                            const TextSpan(
+                                                              text: 'Lugar: ',
+                                                              style: TextStyle(
+                                                                color: Colors
+                                                                    .white, // Color para "Fecha"
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold, // Otras propiedades de estilo según sea necesario
+                                                              ),
+                                                            ),
+                                                            TextSpan(
+                                                              text:
+                                                                  filterItems[index].location,
+                                                              style: const TextStyle(
+                                                                color: Colors
+                                                                    .black, // Color para la fecha
+                                                                // Otras propiedades de estilo según sea necesario
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
                                                     ),
-                                                    const SizedBox(height: 20,),
+                                                    const SizedBox(
+                                                      height: 20,
+                                                    ),
                                                     Container(
                                                       width: 300,
-                                                      child: Text(
-                                                        'Fecha: ${filterItems[index].date}')
+                                                      child: RichText(
+                                                        text: TextSpan(
+                                                          children: [
+                                                            const TextSpan(
+                                                              text: 'Fecha: ',
+                                                              style: TextStyle(
+                                                                color: Colors
+                                                                    .white, // Color para "Fecha"
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold, // Otras propiedades de estilo según sea necesario
+                                                              ),
+                                                            ),
+                                                            TextSpan(
+                                                              text:
+                                                                  filterItems[index].date,
+                                                              style: const TextStyle(
+                                                                color: Colors
+                                                                    .black, // Color para la fecha
+                                                                // Otras propiedades de estilo según sea necesario
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
