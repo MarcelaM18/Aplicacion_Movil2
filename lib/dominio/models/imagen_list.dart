@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 final List imgList = [
-  
   ['assets/img/sostenible.png', 'Sostenible'],
-  ['assets/img/sostenible.png', 'Sostenible'],
+  ['assets/img/sostenible.jpg', 'Sostenible'],
   ['assets/img/proteccion.jpg', 'Proteccion'],
   ['assets/img/crecimiento.png', 'Crecimiento'],
 ];

@@ -129,7 +129,6 @@ class _HomeEventosState extends State<HomeEventos> {
                 child: Column(
                   children: [
                     Container(
-                      
                     width: 317,
                     height: 52,
                       margin: const EdgeInsets.fromLTRB(18, 20, 18, 0),

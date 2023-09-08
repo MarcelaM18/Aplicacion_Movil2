@@ -1,11 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:navegacion/dominio/models/imagen_list.dart';
 import 'package:navegacion/presentation/screens/second_page.dart';
 import 'package:navegacion/presentation/screens/third_page.dart';
 import 'package:navegacion/presentation/widgets/menu_appbar.dart';
 import 'package:navegacion/presentation/widgets/menu_drawer.dart';
-
-import '../../dominio/models/imagen_list.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
