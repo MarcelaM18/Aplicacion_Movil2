@@ -167,9 +167,9 @@ class _HomeEventosState extends State<HomeEventos> {
               Container(
                   constraints: BoxConstraints(
                     maxWidth: 317,
-                    maxHeight: 323 - MediaQuery.of(context).viewInsets.bottom,
+                    maxHeight: 323,
                   ),
-                  width: 323,
+                  width: 317,
                   decoration: const BoxDecoration(
                     color: Color.fromARGB(207, 247, 237, 237),
                     borderRadius: BorderRadius.only(
@@ -195,7 +195,6 @@ class _HomeEventosState extends State<HomeEventos> {
                                       BorderRadius.all(Radius.circular(10)),
                                   color: Colors.black,
                                 ),
-                               
                                 // child: Image.file(
                                 //     File(filterItems[index].photo),
                                 //     fit: BoxFit.cover,
@@ -259,7 +258,7 @@ class _HomeEventosState extends State<HomeEventos> {
                                                       child: Text(
                                                         'Fecha: ${filterItems[index].date}')
                                                     ),
-                                                     Icon(Icons.delete),
+                                                    Icon(Icons.delete),
                                                   ],
                                                 ),
                                               ),
