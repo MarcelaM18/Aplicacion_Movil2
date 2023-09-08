@@ -63,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               const Text(
-                'Login',
+                'Inicio Sesion',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
