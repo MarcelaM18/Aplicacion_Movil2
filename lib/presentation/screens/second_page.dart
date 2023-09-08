@@ -67,7 +67,7 @@ class _HomeEventosState extends State<HomeEventos> {
                     ],
                   ),
                 const  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SizedBox(
                         width: 274,
@@ -90,64 +90,69 @@ class _HomeEventosState extends State<HomeEventos> {
                 ],
               ),
       const SizedBox(height: 15),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Column(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: IconButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const EventoRegistro(),
+                        Column(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.green,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: IconButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const EventoRegistro(),
+                                    ),
+                                  );
+                                },
+                                icon: const Icon(
+                                  Icons.event_available,
+                                  size: 50,
+                                  color: Color.fromARGB(255, 255, 255, 255),
                                 ),
-                              );
-                            },
-                            icon: const Icon(
-                              Icons.event_available,
-                              size: 50,
-                              color: Color.fromARGB(255, 255, 255, 255),
+                              ),
                             ),
-                          ),
+                            const Text('Registar')
+                          ],
                         ),
-                        const Text('Registar')
-                      ],
-                    ),
-                    const SizedBox(height:30),
-                    Column(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: IconButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const ThirdPage(),
+                        const SizedBox(width:30),
+                        Column(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.green,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: IconButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const ThirdPage(),
+                                    ),
+                                  );
+                                },
+                                icon: const Icon(
+                                  Icons.map,
+                                  size: 50,
+                                  color: Color.fromARGB(255, 255, 255, 255),
                                 ),
-                              );
-                            },
-                            icon: const Icon(
-                              Icons.accessibility,
-                              size: 50,
-                              color: Color.fromARGB(255, 255, 255, 255),
+                              ),
                             ),
-                          ),
+                            const Text('Ubicaciones')
+                          ],
                         ),
-                        const Text('Ubicaciones')
+                        const SizedBox(
+                          height: 100,
+                        ),
                       ],
-                    ),
-                    const SizedBox(
-                      height: 100,
                     ),
                   ],
                 ),

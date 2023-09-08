@@ -21,7 +21,7 @@ class Home extends StatelessWidget {
               children: [
                 const SizedBox(height: 30),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Column(
                       children: [
@@ -51,35 +51,8 @@ class Home extends StatelessWidget {
                         )
                       ],
                     ),
-                    const SizedBox(
-                      height: 100,
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: IconButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const ThirdPage(),
-                                ),
-                              );
-                            },
-                            icon: const Icon(
-                              Icons.accessibility,
-                              size: 50,
-                              color: Color.fromARGB(255, 255, 255, 255),
-                            ),
-                          ),
-                        ),
-                        const Text('Personas')
-                      ],
-                    ),
+                    
+                    
                     const SizedBox(
                       height: 100,
                     ),

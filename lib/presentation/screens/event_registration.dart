@@ -121,10 +121,12 @@ CircleAvatar(
   backgroundColor: Color.fromARGB(207, 247, 237, 237),
   child: Icon(Icons.photo,
   size: 30),
+  radius: 70.0
 ),
 if(photo.isNotEmpty)
 CircleAvatar(
-  backgroundImage: FileImage(File(photo)),),
+  backgroundImage: FileImage(File(photo)),
+  radius: 70.0),
       //FORMULARIO
         SingleChildScrollView(
           padding: const EdgeInsets.all(20.0),           
@@ -133,7 +135,7 @@ CircleAvatar(
                     child: ListView(
                       shrinkWrap: true,
             children: [
-SizedBox(height:8.0),               
+SizedBox(height:8.0),              
 Container(
   width: 275,
   height: 60,
