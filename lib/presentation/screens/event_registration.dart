@@ -1,4 +1,6 @@
-import 'dart:html';
+
+
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -115,20 +117,21 @@ class _EventoRegistroState extends State<EventoRegistro> {
                 ],
               ),
 
-
+if(photo.isEmpty)
    CircleAvatar(
   radius: 70.0, // Define el radio para establecer el tamaño
   backgroundColor: Color.fromARGB(207, 247, 237, 237),
-  child: _buildAvatarChild(), // Utiliza una función para construir el contenido del Avatar
+  child: Icon(Icons.photo_album,
+  size: 30,), // Utiliza una función para construir el contenido del Avatar
 ),
-      if (photo.isNotEmpty)
-                      //para cuando se emula en navegador
-                            Image.network(photo),
-                            //para los que emulan en celular
-                          // Image.file(
-                          //   File(photo),
-                          // ),
+if(photo.isNotEmpty)
+CircleAvatar(
+  radius: 70.0, // Define el radio para establecer el tamaño
+  backgroundImage: FileImage(File(photo)), // Utiliza una función para construir el contenido del Avatar
+),
 
+
+ 
 
                 
 
