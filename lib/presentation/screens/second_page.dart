@@ -117,189 +117,186 @@ class _HomeEventosState extends State<HomeEventos> {
                     ],
                   ),
                 ),
-                //buscar
-              Container(
-          child: Column(
-          //  mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              const SizedBox(
-                height: 5,
-              ),
-              Container(
-                child: Column(
-                  children: [
-                    Container(
-                    width: 317,
-                    height: 52,
-                      margin: const EdgeInsets.fromLTRB(18, 20, 18, 0),
-                      decoration: const BoxDecoration(
-                        color: Color.fromARGB(207, 248, 248, 248),
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10),
-                          topRight: Radius.circular(10),
-                        ),
+                Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 5,
                       ),
-                      child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-                          child: TextField(
-                            onChanged: searchItems,
-                            controller: _searchController,
-                            decoration: const InputDecoration(
-                              labelText: 'Buscar Evento',
-                              suffixIcon: Icon(Icons.search),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      width: 290,
-                      margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                      decoration: const BoxDecoration(
-                        color: Color.fromARGB(207, 247, 237, 237),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                  constraints: BoxConstraints(
-                    maxWidth: 317,
-<<<<<<< HEAD
-                    maxHeight: 323 ,
-=======
-                    maxHeight: 323,
->>>>>>> 5eb57cc6b13823d5d0bcd50176f20e38d07ed304
-                  ),
-                  width: 317,
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(207, 247, 237, 237),
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      bottomRight: Radius.circular(10),
-                    ),
-                  ),
-                  child: GestureDetector(
-                    child: ListView.builder(
-                      itemCount: filterItems.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Column(
+                      Container(
+                        child: Column(
                           children: [
-                            ListTile(
-                              title: Text(filterItems[index].name),
-                              subtitle: Text(filterItems[index].date),
-                              
-                              leading: Container(
-                                width: 50,
-                                height: 50,
-                                decoration: const BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10)),
-                                  color: Colors.black,
+                            Container(
+                              width: 317,
+                              height: 52,
+                              margin: const EdgeInsets.fromLTRB(18, 20, 18, 0),
+                              decoration: const BoxDecoration(
+                                color: Color.fromARGB(207, 248, 248, 248),
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10),
+                                  topRight: Radius.circular(10),
                                 ),
-                                // child: Image.file(
-                                //     File(filterItems[index].photo),
-                                //     fit: BoxFit.cover,
-                                //     scale: 1,
-                                //   ),
                               ),
-                              onTap: () {
-                                showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return AlertDialog(
-                                      title: Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            10, 0, 0, 0),
-                                        child: Text(filterItems[index].name),
-                                      ),
-                                      content: Container(
-                                        height: 310,
-                                        child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          children: [
-                                            Container(
-                                              width: 300,
-                                              height: 150,
-                                              decoration: const BoxDecoration(
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(10)),
-                                                color: Colors.black,
-                                              ),
-                                              // child: Image.file(
-                                              //     File(filterItems[index].photo),
-                                              //     fit: BoxFit.cover,
-                                              //     scale: 1,
-                                              //   ),
-                                            ),
-                                            const SizedBox(height: 20,),
-                                            Container(
-                                              height: 140,
-                                              decoration: const BoxDecoration(
-                                                color: Colors.green,
-                                                borderRadius: BorderRadius.all(Radius.circular(10))
-                                              ),
-                                              child: Padding(
-                                                padding: const EdgeInsets.all(8.0),
-                                                child: Column(
-                                                  children: [
-                                                    Container(
-                                                      width: 300,
-                                                      child: Text(
-                                                        'Descripción: ${filterItems[index].description}')
-                                                    ),
-                                                    const SizedBox(height: 20,),
-                                                    Container(
-                                                      width: 300,
-                                                      child: Text(
-                                                        'Lugar: ${filterItems[index].location}')
-                                                    ),
-                                                    const SizedBox(height: 20,),
-                                                    Container(
-                                                      width: 300,
-                                                      child: Text(
-                                                        'Fecha: ${filterItems[index].date}')
-                                                    ),
-                                                    Icon(Icons.delete),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () {
-                                            Navigator.of(context).pop();
-                                          },
-                                          child: const Text("Cerrar"),
-                                        ),
-                                      ],
-                                    );
-                                  },
-                                );
-                              },
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                                  child: TextField(
+                                    onChanged: searchItems,
+                                    controller: _searchController,
+                                    decoration: const InputDecoration(
+                                      labelText: 'Buscar Evento',
+                                      suffixIcon: Icon(Icons.search),
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                             Container(
                               width: 290,
-                              height: 0.1,
+                              margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                               decoration: const BoxDecoration(
-                                color: Colors.black,
+                                color: Color.fromARGB(207, 247, 237, 237),
                               ),
-                            )
+                            ),
                           ],
-                        );
-                      },
-                    ),
-                  ))
-            ],
-          ),
+                        ),
+                      ),
+                      Container(
+                        constraints: BoxConstraints(
+                          maxWidth: 317,
+                          maxHeight: 323,
+                        ),
+                        width: 317,
+                        decoration: const BoxDecoration(
+                          color: Color.fromARGB(207, 247, 237, 237),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(10),
+                            bottomRight: Radius.circular(10),
+                          ),
+                        ),
+                        child: GestureDetector(
+                          child: ListView.builder(
+                            itemCount: filterItems.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return Column(
+                                children: [
+                                  ListTile(
+                                    title: Text(filterItems[index].name),
+                                    subtitle: Text(filterItems[index].date),
+
+                                    leading: Container(
+                                      width: 50,
+                                      height: 50,
+                                      decoration: const BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.all(Radius.circular(10)),
+                                        color: Colors.black,
+                                      ),
+                                      // child: Image.file(
+                                      //     File(filterItems[index].photo),
+                                      //     fit: BoxFit.cover,
+                                      //     scale: 1,
+                                      //   ),
+                                    ),
+                                    onTap: () {
+                                      showDialog(
+                                        context: context,
+                                        builder: (BuildContext context) {
+                                          return AlertDialog(
+                                            title: Padding(
+                                              padding: const EdgeInsets.fromLTRB(
+                                                  10, 0, 0, 0),
+                                              child: Text(filterItems[index].name),
+                                            ),
+                                            content: Container(
+                                              height: 310,
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment.start,
+                                                children: [
+                                                  Container(
+                                                    width: 300,
+                                                    height: 150,
+                                                    decoration: const BoxDecoration(
+                                                      borderRadius: BorderRadius.all(
+                                                          Radius.circular(10)),
+                                                      color: Colors.black,
+                                                    ),
+                                                    // child: Image.file(
+                                                    //     File(filterItems[index].photo),
+                                                    //     fit: BoxFit.cover,
+                                                    //     scale: 1,
+                                                    //   ),
+                                                  ),
+                                                  const SizedBox(height: 20,),
+                                                  Container(
+                                                    height: 140,
+                                                    decoration: const BoxDecoration(
+                                                      color: Colors.green,
+                                                      borderRadius: BorderRadius.all(Radius.circular(10))
+                                                    ),
+                                                    child: Padding(
+                                                      padding: const EdgeInsets.all(8.0),
+                                                      child: Column(
+                                                        children: [
+                                                          Container(
+                                                            width: 300,
+                                                            child: Text(
+                                                              'Descripción: ${filterItems[index].description}')
+                                                          ),
+                                                          const SizedBox(height: 20,),
+                                                          Container(
+                                                            width: 300,
+                                                            child: Text(
+                                                              'Lugar: ${filterItems[index].location}')
+                                                          ),
+                                                          const SizedBox(height: 20,),
+                                                          Container(
+                                                            width: 300,
+                                                            child: Text(
+                                                              'Fecha: ${filterItems[index].date}')
+                                                          ),
+                                                          Icon(Icons.delete),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () {
+                                                  Navigator.of(context).pop();
+                                                },
+                                                child: const Text("Cerrar"),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+                                    },
+                                  ),
+                                  Container(
+                                    width: 290,
+                                    height: 0.1,
+                                    decoration: const BoxDecoration(
+                                      color: Colors.black,
+                                    ),
+                                  )
+                                ],
+                              );
+                            },
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
-        ]),         
-            ],
-          ),
       ),
     );
   }

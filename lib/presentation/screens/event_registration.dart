@@ -118,7 +118,7 @@ class _EventoRegistroState extends State<EventoRegistro> {
               ),
 
 if(photo.isEmpty)
-   CircleAvatar(
+  CircleAvatar(
   radius: 70.0, // Define el radio para establecer el tamaño
   backgroundColor: Color.fromARGB(207, 247, 237, 237),
   child: Icon(Icons.photo_album,
@@ -131,14 +131,14 @@ CircleAvatar(
 ),
 
 
- 
+
 
                 
 
 
           //FORMULARIO
         Padding(
-          padding: const EdgeInsets.all(16.0),           
+          padding: const EdgeInsets.all(16.0),
                   child: Form(
                     key: _formKey,
                     child: ListView(
