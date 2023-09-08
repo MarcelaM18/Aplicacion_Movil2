@@ -37,7 +37,7 @@ class NavegationDrawer extends StatelessWidget {
             leading: const Icon(Icons.event),
             title: const Text('Eventos'),
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage()),);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => HomeEventos()),);
             },),
             ListTile(
             leading: const Icon(Icons.person),
