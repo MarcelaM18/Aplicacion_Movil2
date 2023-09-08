@@ -16,11 +16,223 @@ class ThirdPage extends StatefulWidget {
 class _ThirdPageState extends State<ThirdPage> {
   final TextEditingController _searchController = TextEditingController();
 
-  List<Event> filterItems = events;
+  List<Event> filterItems = [
+    Event(
+      name: 'Evento 1',
+      description: 'Descripción del evento 1',
+      location: 'Ubicación del evento 1',
+      date: '14-03-2000',
+      photo: 'imagen1.jpg',
+    ),
+    Event(
+      name: 'Evento 2',
+      description: 'Descripción del evento 2',
+      location: 'Ubicación del evento 2',
+      date: '14-03-2000',
+      photo: 'imagen2.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 4',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 5',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+    Event(
+      name: 'Evento 3',
+      description: 'Descripción del evento 3',
+      location: 'Ubicación del evento 3',
+      date: '14-03-2000',
+      photo: 'imagen3.jpg',
+    ),
+  ];
 
   void searchItem(String text) {
     setState(() {
-      filterItems = events
+      filterItems = [
+        Event(
+          name: 'Evento 1',
+          description: 'Descripción del evento 1',
+          location: 'Medellín',
+          date: '14-03-2000',
+          photo: 'imagen1.jpg',
+        ),
+        Event(
+          name: 'Evento 2',
+          description: 'Descripción del evento 2',
+          location: 'Medellín',
+          date: '14-03-2000',
+          photo: 'imagen2.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Medellín',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 4',
+          description: 'Descripción del evento 3',
+          location: 'Medellín',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 5',
+          description: 'Descripción del evento 3',
+          location: 'Medellín',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Bogotá',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Bogotá',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Bogotá',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Bogotá',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Bogotá',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Bogotá',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Cartagena',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Cartagena',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Cartagena',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+        Event(
+          name: 'Evento 3',
+          description: 'Descripción del evento 3',
+          location: 'Cartagena',
+          date: '14-03-2000',
+          photo: 'imagen3.jpg',
+        ),
+      ]
           .where((i) => i.location.toLowerCase().contains(text.toLowerCase()))
           .toList();
     });
@@ -52,7 +264,7 @@ class _ThirdPageState extends State<ThirdPage> {
                     Container(
                       margin: const EdgeInsets.fromLTRB(18, 20, 18, 0),
                       decoration: const BoxDecoration(
-                        color: Color.fromRGBO(246, 251, 244, 0.85),
+                        color: Colors.green,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(10),
                           topRight: Radius.circular(10),
@@ -89,7 +301,7 @@ class _ThirdPageState extends State<ThirdPage> {
                   ),
                   width: 323,
                   decoration: const BoxDecoration(
-                    color: Color.fromRGBO(246, 251, 244, 0.85),
+                    color: Color.fromRGBO(246, 251, 244, 1),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(10),
                       bottomRight: Radius.circular(10),

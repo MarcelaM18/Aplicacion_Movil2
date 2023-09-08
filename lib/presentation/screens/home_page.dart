@@ -1,10 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:navegacion/dominio/models/imagen_list.dart';
 import 'package:navegacion/presentation/screens/second_page.dart';
 import 'package:navegacion/presentation/screens/third_page.dart';
 import 'package:navegacion/presentation/widgets/menu_appbar.dart';
 import 'package:navegacion/presentation/widgets/menu_drawer.dart';
+
+import '../../dominio/models/imagen_list.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -45,10 +46,8 @@ class Home extends StatelessWidget {
                               color: Color.fromARGB(255, 255, 255, 255),
                             ),
                           ),
-
                         ),
-                        const Text('Eventos',
-                        )
+                        const Text('Eventos')
                       ],
                     ),
                     
@@ -58,7 +57,13 @@ class Home extends StatelessWidget {
                     ),
                   ],
                 ),
-                
+                const Text(
+                  'Productos Destacados',
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 178, 174, 62),
+                    fontSize: 18,
+                  ),
+                ),
                 CarouselSlider(
                   options: CarouselOptions(
                     autoPlay: true,

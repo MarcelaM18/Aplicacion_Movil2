@@ -129,7 +129,7 @@ CircleAvatar(
   radius: 70.0),
       //FORMULARIO
         SingleChildScrollView(
-          padding: const EdgeInsets.all(20.0),           
+          padding: const EdgeInsets.all(20.0),
                   child: Form(
                     key: _formKey,
                     child: ListView(
