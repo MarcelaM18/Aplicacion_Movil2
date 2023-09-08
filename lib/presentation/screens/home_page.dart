@@ -46,8 +46,10 @@ class Home extends StatelessWidget {
                               color: Color.fromARGB(255, 255, 255, 255),
                             ),
                           ),
+
                         ),
-                        const Text('Eventos')
+                        const Text('Eventos',
+                        )
                       ],
                     ),
                     const SizedBox(
@@ -84,13 +86,7 @@ class Home extends StatelessWidget {
                     ),
                   ],
                 ),
-                const Text(
-                  'Productos Destacados',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 178, 174, 62),
-                    fontSize: 18,
-                  ),
-                ),
+                
                 CarouselSlider(
                   options: CarouselOptions(
                     autoPlay: true,
