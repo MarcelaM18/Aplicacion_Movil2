@@ -46,7 +46,7 @@ class _UsuarioRegistrationScreenState extends State<UsuarioRegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MenuAppbar(centerTitle: true, showMenu: false),
-      body: ListView( // Usar ListView aquí en lugar de SingleChildScrollView
+      body: ListView(
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.all(16.0),

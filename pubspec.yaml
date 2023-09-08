@@ -76,7 +76,12 @@ flutter:
     - assets/img/listaapp.jpg
     - assets/img/ambiente.jpg
     - assets/img/sostenible.jpg
+<<<<<<< HEAD
     
+=======
+    - assets/img/sostenible.png
+
+>>>>>>> 5eb57cc6b13823d5d0bcd50176f20e38d07ed304
 
     
 

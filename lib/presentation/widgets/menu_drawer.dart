@@ -1,7 +1,6 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:navegacion/presentation/screens/second_page.dart';
 import 'package:navegacion/presentation/screens/home_page.dart';
+import 'package:navegacion/presentation/screens/second_page.dart';
 import 'package:navegacion/presentation/screens/third_page.dart';
 
 class NavegationDrawer extends StatelessWidget {
@@ -37,7 +36,7 @@ class NavegationDrawer extends StatelessWidget {
             leading: const Icon(Icons.event),
             title: const Text('Eventos'),
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => HomeEventos()),);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeEventos()),);
             },),
             ListTile(
             leading: const Icon(Icons.person),
