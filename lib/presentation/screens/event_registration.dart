@@ -32,7 +32,6 @@ class _EventoRegistroState extends State<EventoRegistro> {
     return null;
   }
 
-<<<<<<< HEAD
   Widget buildAvatarChild() {
     if (photo.isNotEmpty) {
       return Image.file(
@@ -50,24 +49,6 @@ class _EventoRegistroState extends State<EventoRegistro> {
         ),
       );
     }
-=======
-Widget _buildAvatarChild() {
-  if (photo.isNotEmpty) {
-    return Image.network(
-      photo,
-      width: 140, // Ancho de la imagen
-      height: 140, // Alto de la imagen
-      fit: BoxFit.cover, // Ajusta la imagen al círculo
-    );
-  } else {
-    return ElevatedButton(
-      onPressed: _pickImage,
-      child: Icon(
-        Icons.photo_camera,
-        size: 30,
-      ),
-    );
->>>>>>> ab9f8c1e015e6a9e14fbe2d85e6c8d1858fbd0c0
   }
 
   @override
@@ -76,28 +57,11 @@ Widget _buildAvatarChild() {
       appBar: MenuAppbar(),
       drawer: NavegationDrawer(),
       backgroundColor: Colors.transparent,
-<<<<<<< HEAD
       body: Center(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
-=======
-      body: SingleChildScrollView(
-        child:
-      Stack(
-        children: [
-          // Background Image
-          Positioned.fill(
-            child: Image.asset(
-              'assets/img/sostenible.jpg',
-              fit: BoxFit.cover,
-              color: Color.fromARGB(6, 128, 125, 125),
-              colorBlendMode: BlendMode.modulate,
-            ),
-          ),
-          Column(
->>>>>>> ab9f8c1e015e6a9e14fbe2d85e6c8d1858fbd0c0
             children: [
               // Background Image
               Image.asset(
@@ -147,7 +111,6 @@ Widget _buildAvatarChild() {
                   ),
                 ],
               ),
-<<<<<<< HEAD
               if (photo.isEmpty)
                 CircleAvatar(
                   backgroundColor: Color.fromARGB(207, 247, 237, 237),
@@ -330,57 +293,6 @@ Widget _buildAvatarChild() {
                               date: _dateController.text,
                               photo: photo,
                             );
-=======
-CircleAvatar(
-                backgroundColor: Color.fromARGB(207, 247, 237, 237),
-                radius: 70.0,
-                child: _buildAvatarChild(),),
-      //FORMULARIO
-        SingleChildScrollView(
-          padding: const EdgeInsets.all(20.0),
-                  child: Form(
-                    key: _formKey,
-                    child: ListView(
-                      shrinkWrap: true,
-            children: [
-SizedBox(height:8.0),              
-Container(
-  width: 275,
-  height: 60,
-  decoration: BoxDecoration(
-    color: Colors.white,
-    borderRadius: BorderRadius.circular(6),
-    border: Border.all(width: 0.50, color: Color(0xFF545F70)),
-  ),
-  child: Column(
-    mainAxisSize: MainAxisSize.min,
-    mainAxisAlignment: MainAxisAlignment.center,
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      TextFormField(
-        controller: _nameController,
-        decoration: InputDecoration(
-          labelText: 'Nombre:',
-          border: InputBorder.none,
-          labelStyle: TextStyle(
-            fontSize: 14,
-          fontFamily: 'Roboto',
-          fontWeight: FontWeight.w600,
-          height: 1.43,
-          letterSpacing: 0.10,),
-        ),
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'Por favor, ingrese un nombre';
-          }
-          return null;
-        },
-      ),
-      
-    ],
-  ),
-),
->>>>>>> ab9f8c1e015e6a9e14fbe2d85e6c8d1858fbd0c0
 
                             events.add(newEvent);
                             Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
@@ -402,18 +314,8 @@ Container(
               ),
             ],
           ),
-<<<<<<< HEAD
         ),
       ),
     );
-=======
-        ]),
-      )
-      );
-
-          
-
-   
->>>>>>> ab9f8c1e015e6a9e14fbe2d85e6c8d1858fbd0c0
   }
 }
