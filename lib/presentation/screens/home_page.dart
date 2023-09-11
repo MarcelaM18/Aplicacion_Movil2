@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:navegacion/presentation/screens/second_page.dart';
-import 'package:navegacion/presentation/screens/third_page.dart';
 import 'package:navegacion/presentation/widgets/menu_appbar.dart';
 import 'package:navegacion/presentation/widgets/menu_drawer.dart';
 
@@ -15,65 +14,57 @@ class Home extends StatelessWidget {
     return Scaffold(
       drawer: const NavegationDrawer(),
       appBar: const MenuAppbar(),
-      body: Stack(
+      body: ListView(
         children: [
-          SingleChildScrollView(
-            child: Column(
+          Container(
+            padding: const EdgeInsets.only(top: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Column(
                   children: [
-                    Column(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.green,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: IconButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const HomeEventos(),
-                                ),
-                              );
-                            },
-                            icon: const Icon(
-                              Icons.event_available,
-                              size: 50,
-                              color: Color.fromARGB(255, 255, 255, 255),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomeEventos(),
                             ),
-                          ),
+                          );
+                        },
+                        icon: const Icon(
+                          Icons.event_available,
+                          size: 50,
+                          color: Color.fromARGB(255, 255, 255, 255),
                         ),
-                        const Text('Eventos')
-                      ],
+                      ),
                     ),
-                    
-                    
-                    const SizedBox(
-                      height: 100,
-                    ),
+                    const Text('Eventos')
                   ],
-                ),
-                const Text(
-                  'Productos Destacados',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 178, 174, 62),
-                    fontSize: 18,
-                  ),
-                ),
-                CarouselSlider(
-                  options: CarouselOptions(
-                    autoPlay: true,
-                    aspectRatio: 2.0,
-                    enlargeCenterPage: true,
-                  ),
-                  items: imageSliders,
                 ),
               ],
             ),
+          ),
+          const SizedBox(height: 100),
+          const Text(
+            'Productos Destacados',
+            style: TextStyle(
+              color: Color.fromARGB(255, 178, 174, 62),
+              fontSize: 18,
+            ),
+          ),
+          CarouselSlider(
+            options: CarouselOptions(
+              autoPlay: true,
+              aspectRatio: 2.0,
+              enlargeCenterPage: true,
+            ),
+            items: imageSliders,
           ),
           Align(
             alignment: Alignment.bottomCenter,
