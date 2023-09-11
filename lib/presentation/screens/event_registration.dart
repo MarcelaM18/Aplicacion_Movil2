@@ -36,7 +36,7 @@ class _EventoRegistroState extends State<EventoRegistro> {
   }
   }
 
-                Widget _buildAvatarChild() {
+Widget _buildAvatarChild() {
   if (photo.isNotEmpty) {
     return Image.network(
       photo,
@@ -61,7 +61,9 @@ class _EventoRegistroState extends State<EventoRegistro> {
       appBar:  MenuAppbar(),
       drawer:  NavegationDrawer(),
       backgroundColor: Colors.transparent,
-      body: Stack(
+      body: SingleChildScrollView(
+        child:
+      Stack(
         children: [
           // Background Image
           Positioned.fill(
@@ -116,17 +118,10 @@ class _EventoRegistroState extends State<EventoRegistro> {
                   ),
                 ],
               ),
-if(photo.isEmpty)
 CircleAvatar(
-  backgroundColor: Color.fromARGB(207, 247, 237, 237),
-  child: Icon(Icons.photo,
-  size: 30),
-  radius: 70.0
-),
-if(photo.isNotEmpty)
-CircleAvatar(
-  backgroundImage: FileImage(File(photo)),
-  radius: 70.0),
+                backgroundColor: Color.fromARGB(207, 247, 237, 237),
+                radius: 70.0,
+                child: _buildAvatarChild(),),
       //FORMULARIO
         SingleChildScrollView(
           padding: const EdgeInsets.all(20.0),
@@ -323,6 +318,7 @@ Container(
             ],
           ),
         ]),
+      )
       );
 
           

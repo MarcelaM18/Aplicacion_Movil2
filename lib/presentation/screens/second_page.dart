@@ -8,6 +8,7 @@ import '../../datos/events_list.dart';
 import '../../dominio/models/event.dart';
 
 class HomeEventos extends StatefulWidget {
+   
   const HomeEventos({Key? key});
 
   @override
@@ -217,7 +218,7 @@ class _HomeEventosState extends State<HomeEventos> {
                   ),
                   child: GestureDetector(
                     child: ListView.builder(
-                      itemCount: filterItems.length,
+                      itemCount:  filterItems.length,
                       itemBuilder: (BuildContext context, int index) {
                         return Column(
                           children: [
@@ -261,6 +262,7 @@ class _HomeEventosState extends State<HomeEventos> {
                                                 borderRadius: BorderRadius.all(
                                                     Radius.circular(10)),
                                                 color: Colors.black,
+                                                
                                               ),
                                               // child: Image.file(
                                               //     File(filterItems[index].photo),
@@ -294,9 +296,10 @@ class _HomeEventosState extends State<HomeEventos> {
                                                     Container(
                                                       width: 300,
                                                       child: Text(
-                                                        'Fecha: ${filterItems[index].date}')
+                                                        'Lugar: ${filterItems[index].date}')
                                                     ),
-                                                    Icon(Icons.delete),
+
+                                                    
                                                   ],
                                                 ),
                                               ),
@@ -305,12 +308,25 @@ class _HomeEventosState extends State<HomeEventos> {
                                         ),
                                       ),
                                       actions: [
-                                        TextButton(
-                                          onPressed: () {
-                                            Navigator.of(context).pop();
-                                          },
-                                          child: const Text("Cerrar"),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            TextButton(
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: const Text("Cerrar"),
+                                            ),
+                                            ElevatedButton(onPressed:
+                                             (){
+                                           setState((){
+                                           filterItems.removeAt(index);
+                                            });
+                                             },
+                                             child: Icon(Icons.delete),),
+                                          ],
                                         ),
+                                        
                                       ],
                                     );
                                   },
