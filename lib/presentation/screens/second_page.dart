@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navegacion/presentation/screens/event_registration.dart';
+import 'package:navegacion/presentation/screens/third_page.dart';
 import 'package:navegacion/presentation/widgets/menu_appbar.dart';
 import 'package:navegacion/presentation/widgets/menu_drawer.dart';
 
@@ -29,9 +30,11 @@ class _HomeEventosState extends State<HomeEventos> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MenuAppbar(),
-      drawer:  NavegationDrawer(),
+      drawer: const  NavegationDrawer(),
       backgroundColor: Colors.transparent,
-      body: Stack(
+      body: SingleChildScrollView(
+        child: 
+      Stack(
         children: [
           // Background Image
           Positioned.fill(
@@ -44,7 +47,7 @@ class _HomeEventosState extends State<HomeEventos> {
           ),
           Column(
             children: [
-              SizedBox(height: 13),
+            const  SizedBox(height: 13),
               Row(
                 children: [
                   Column(
@@ -55,7 +58,7 @@ class _HomeEventosState extends State<HomeEventos> {
                         // height: 17,
                         child: IconButton(onPressed: (){
                           Navigator.of(context).pop();
-                        }, icon:  Icon(
+                        }, icon: const  Icon(
                           Icons.arrow_back,
                           color: Color.fromARGB(137, 17, 17, 17),
                           size: 25,
@@ -64,7 +67,7 @@ class _HomeEventosState extends State<HomeEventos> {
                     ],
                   ),
                 const  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SizedBox(
                         width: 274,
@@ -75,7 +78,7 @@ class _HomeEventosState extends State<HomeEventos> {
                           style: TextStyle(
                             color: Color.fromARGB(230, 255, 255, 255),
                             fontSize: 32,
-                            fontFamily: 'Pacifico',
+                            fontFamily: 'Inconsolata',
                             fontWeight: FontWeight.w400,
                             height: 0.62,
                             letterSpacing: 0.10,
@@ -86,41 +89,77 @@ class _HomeEventosState extends State<HomeEventos> {
                   ),
                 ],
               ),
-              Container(
-                width: 120,
-                height: 120,
-                child: Column(
+      const SizedBox(height: 15),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const EventoRegistro(),
-                          ),
-                        );
-                      },
-                      icon: Icon(Icons.today,
-                          size: 70, color: Color.fromARGB(137, 17, 17, 17)),
-                    ),
-                    Text(
-                      'Registrar ',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Color.fromARGB(137, 17, 17, 17),
-                        fontSize: 15,
-                        fontFamily: 'Inconsolata',
-                        fontWeight: FontWeight.w400,
-                        height: 1.33,
-                        letterSpacing: 0.10,
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.green,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: IconButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const EventoRegistro(),
+                                    ),
+                                  );
+                                },
+                                icon: const Icon(
+                                  Icons.event_available,
+                                  size: 50,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                ),
+                              ),
+                            ),
+                            const Text('Registar')
+                          ],
+                        ),
+                        const SizedBox(width:30),
+                        Column(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.green,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: IconButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const ThirdPage(),
+                                    ),
+                                  );
+                                },
+                                icon: const Icon(
+                                  Icons.map,
+                                  size: 50,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                ),
+                              ),
+                            ),
+                            const Text('Ubicaciones')
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 100,
+                        ),
+                      ],
                     ),
                   ],
                 ),
-              ),
+                //buscar
               Container(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+          //  mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const SizedBox(
                 height: 5,
@@ -166,7 +205,7 @@ class _HomeEventosState extends State<HomeEventos> {
               Container(
                   constraints: BoxConstraints(
                     maxWidth: 317,
-                    maxHeight: 323,
+                    maxHeight: 323 ,
                   ),
                   width: 317,
                   decoration: const BoxDecoration(
@@ -296,6 +335,7 @@ class _HomeEventosState extends State<HomeEventos> {
         ]),         
             ],
           ),
+      ),
        );
       
                                    
