@@ -55,12 +55,12 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MenuAppbar(centerTitle: true, showMenu: false),
-      body: SingleChildScrollView(
-        child: Padding(
+      body: Center(
+        child: Container(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center, // Centrar verticalmente
             children: <Widget>[
               const Text(
                 'Inicio Sesion',
@@ -98,34 +98,31 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 16.0),
               ElevatedButton(
-                  onPressed: () {
-                    String username = _usernameController.text;
-                    String password = _passwordController.text;
+                onPressed: () {
+                  String username = _usernameController.text;
+                  String password = _passwordController.text;
 
-                    if (username.isNotEmpty && password.isNotEmpty) {
-                      _login(context);
-                      setState(() {
-                        _usernameController.clear();
-                        _passwordController.clear();
-                      });
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Por favor, complete todos los campos.'),
-                          backgroundColor: Colors.red,
-
-                        ),
+                  if (username.isNotEmpty && password.isNotEmpty) {
+                    _login(context);
+                    setState(() {
+                      _usernameController.clear();
+                      _passwordController.clear();
+                    });
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Por favor, complete todos los campos.'),
+                        backgroundColor: Colors.red,
+                      ),
                     );
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    // ignore: deprecated_member_use
-                    primary: Colors.green,
-                    // ignore: deprecated_member_use
-                    onPrimary: Colors.white,
-                  ),
-                  child: const Text('Iniciar sesión', style: TextStyle(color: Colors.white)),
+                  }
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.green,
+                  onPrimary: Colors.white,
                 ),
+                child: const Text('Iniciar sesión', style: TextStyle(color: Colors.white)),
+              ),
             ],
           ),
         ),
