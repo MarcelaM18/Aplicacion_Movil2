@@ -112,11 +112,11 @@ class _ThirdPageState extends State<ThirdPage> {
                                       BorderRadius.all(Radius.circular(10)),
                                   color: Colors.black,
                                 ),
-                                // child: Image.file(
-                                //     File(filterItems[index].photo),
-                                //     fit: BoxFit.cover,
-                                //     scale: 1,
-                                //   ),
+                                child: Image.file(
+                                    File(filterItems[index].photo),
+                                    fit: BoxFit.cover,
+                                    scale: 1,
+                                  ),
                               ),
                               onTap: () {
                                 showDialog(
@@ -142,11 +142,11 @@ class _ThirdPageState extends State<ThirdPage> {
                                                     Radius.circular(10)),
                                                 color: Colors.black,
                                               ),
-                                              // child: Image.file(
-                                              //     File(filterItems[index].photo),
-                                              //     fit: BoxFit.cover,
-                                              //     scale: 1,
-                                              //   ),
+                                              child: Image.file(
+                                                  File(filterItems[index].photo),
+                                                  fit: BoxFit.cover,
+                                                  scale: 1,
+                                                ),
                                             ),
                                             const SizedBox(
                                               height: 20,
