@@ -8,6 +8,7 @@ import '../../datos/events_list.dart';
 import '../../dominio/models/event.dart';
 
 class HomeEventos extends StatefulWidget {
+   
   const HomeEventos({Key? key});
 
   @override
@@ -166,8 +167,53 @@ class _HomeEventosState extends State<HomeEventos> {
                       const SizedBox(
                         height: 5,
                       ),
+<<<<<<< HEAD
                       Container(
                         child: Column(
+=======
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                          child: TextField(
+                            onChanged: searchItems,
+                            controller: _searchController,
+                            decoration: const InputDecoration(
+                              labelText: 'Buscar Evento',
+                              suffixIcon: Icon(Icons.search),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: 290,
+                      margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(207, 247, 237, 237),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                  constraints: BoxConstraints(
+                    maxWidth: 317,
+                    maxHeight: 323 ,
+                  ),
+                  width: 317,
+                  decoration: const BoxDecoration(
+                    color: Color.fromARGB(207, 247, 237, 237),
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                    ),
+                  ),
+                  child: GestureDetector(
+                    child: ListView.builder(
+                      itemCount:  filterItems.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Column(
+>>>>>>> ab9f8c1e015e6a9e14fbe2d85e6c8d1858fbd0c0
                           children: [
                             Container(
                               width: 317,
@@ -193,6 +239,101 @@ class _HomeEventosState extends State<HomeEventos> {
                                   ),
                                 ),
                               ),
+<<<<<<< HEAD
+=======
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            10, 0, 0, 0),
+                                        child: Text(filterItems[index].name),
+                                      ),
+                                      content: Container(
+                                        height: 310,
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              width: 300,
+                                              height: 150,
+                                              decoration: const BoxDecoration(
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.circular(10)),
+                                                color: Colors.black,
+                                                
+                                              ),
+                                              // child: Image.file(
+                                              //     File(filterItems[index].photo),
+                                              //     fit: BoxFit.cover,
+                                              //     scale: 1,
+                                              //   ),
+                                            ),
+                                            const SizedBox(height: 20,),
+                                            Container(
+                                              height: 140,
+                                              decoration: const BoxDecoration(
+                                                color: Colors.green,
+                                                borderRadius: BorderRadius.all(Radius.circular(10))
+                                              ),
+                                              child: Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Column(
+                                                  children: [
+                                                    Container(
+                                                      width: 300,
+                                                      child: Text(
+                                                        'Descripción: ${filterItems[index].description}')
+                                                    ),
+                                                    const SizedBox(height: 20,),
+                                                    Container(
+                                                      width: 300,
+                                                      child: Text(
+                                                        'Lugar: ${filterItems[index].location}')
+                                                    ),
+                                                    const SizedBox(height: 20,),
+                                                    Container(
+                                                      width: 300,
+                                                      child: Text(
+                                                        'Lugar: ${filterItems[index].date}')
+                                                    ),
+
+                                                    
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      actions: [
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            TextButton(
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: const Text("Cerrar"),
+                                            ),
+                                            ElevatedButton(onPressed:
+                                             (){
+                                           setState((){
+                                           filterItems.removeAt(index);
+                                            });
+                                             },
+                                             child: Icon(Icons.delete),),
+                                          ],
+                                        ),
+                                        
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+>>>>>>> ab9f8c1e015e6a9e14fbe2d85e6c8d1858fbd0c0
                             ),
                             Container(
                               width: 290,
