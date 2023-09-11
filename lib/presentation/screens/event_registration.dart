@@ -12,6 +12,7 @@ import '../widgets/menu_drawer.dart';
 import 'home_page.dart';
 
 
+
 class EventoRegistro extends StatefulWidget {
   const EventoRegistro({super.key});
 
@@ -256,25 +257,45 @@ Container(
     mainAxisAlignment: MainAxisAlignment.center, 
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      TextFormField(
-        controller: _dateController,
-        decoration: InputDecoration(
-          labelText: 'Fecha:',
-          border: InputBorder.none, 
-          labelStyle: TextStyle(
-            fontSize: 14,
-          fontFamily: 'Roboto',
-          fontWeight: FontWeight.w600,
-          height: 1.43,
-          letterSpacing: 0.10,),
-        ),
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return 'Por favor, ingrese una fecha';
-          }
-          return null;
-        },
-      ),
+     
+      
+     TextFormField(
+  controller: _dateController,
+  onTap: () {
+    DatePicker.showDatePicker(
+      context,
+      showTitleActions: true,
+      minTime: DateTime(2000),
+      maxTime: DateTime(2101),
+      onConfirm: (date) {
+        setState(() {
+      
+          _dateController.text = date.toString();
+        });
+      },
+      currentTime: DateTime.now(),
+
+    );
+  },
+  decoration: InputDecoration(
+    labelText: 'Fecha:',
+    border: InputBorder.none,
+    labelStyle: TextStyle(
+      fontSize: 14,
+      fontFamily: 'Roboto',
+      fontWeight: FontWeight.w600,
+      height: 1.43,
+      letterSpacing: 0.10,
+    ),
+  ),
+  validator: (value) {
+    if (value == null || value.isEmpty) {
+      return 'Por favor, ingrese una fecha';
+    }
+    return null;
+  },
+)
+
      
     ],
   ),
@@ -325,4 +346,8 @@ Container(
 
    
   }
+}
+
+class DatePicker {
+  static void showDatePicker(BuildContext context, {required bool showTitleActions, required DateTime minTime, required DateTime maxTime, required Null Function(dynamic date) onConfirm, required DateTime currentTime}) {}
 }

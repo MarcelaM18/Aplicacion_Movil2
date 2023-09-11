@@ -255,21 +255,20 @@ class _HomeEventosState extends State<HomeEventos> {
                                         child: Column(
                                           mainAxisAlignment: MainAxisAlignment.start,
                                           children: [
-                                            Container(
-                                              width: 300,
-                                              height: 150,
-                                              decoration: const BoxDecoration(
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(10)),
-                                                color: Colors.black,
-                                                
-                                              ),
-                                              // child: Image.file(
-                                              //     File(filterItems[index].photo),
-                                              //     fit: BoxFit.cover,
-                                              //     scale: 1,
-                                              //   ),
-                                            ),
+                                           Container(
+                                                  width: 300,
+                                                  height: 150,
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                                                    color: Colors.black,
+                                                  ),
+                                                  child: ClipRRect(
+                                                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                                                    child: Image.network
+                                                  (filterItems[index].photo,
+                                                  ),
+                                                ),
+                                           ),
                                             const SizedBox(height: 20,),
                                             Container(
                                               height: 140,
@@ -321,6 +320,8 @@ class _HomeEventosState extends State<HomeEventos> {
                                              (){
                                            setState((){
                                            filterItems.removeAt(index);
+
+                                           Navigator.of(context).pop();
                                             });
                                              },
                                              child: Icon(Icons.delete),),
